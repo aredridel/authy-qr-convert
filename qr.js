@@ -1,20 +1,26 @@
 #!/usr/bin/env node
 
-var data = require('./tokens.json');
+if (!process.argv[2]) {
+    console.warn("use: " + process.argv[0] + " " + process.argv[1] + " " + "filename.json");
+    process.exit(1);
+} else {
 
-var qr = require('qrcode-console');
+    var data = require(process.argv[2]);
 
-var url = require('url');
+    var qr = require('qrcode-console');
 
-data.forEach(function (e) {
-    var u = url.format({
-        protocol: 'otpauth',
-        slashes: true,
-        host: 'totp',
-        pathname: '/' + encodeURIComponent(e.name),
-        query: { secret: e.decryptedSecret, issuer: e.accountType }
+    var url = require('url');
+
+    data.forEach(function (e) {
+        var u = url.format({
+            protocol: 'otpauth',
+            slashes: true,
+            host: 'totp',
+            pathname: '/' + encodeURIComponent(e.name),
+            query: { secret: e.decryptedSecret, issuer: e.accountType }
+        });
+
+        console.log(u);
+        qr.generate(u);
     });
-
-    console.log(u);
-    qr.generate(u);
-});
+}
