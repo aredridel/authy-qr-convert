@@ -1,0 +1,22 @@
+{
+  "name": "authy-qr-convert",
+  "version": "1.0.0",
+  "description": "Convert the json blob from an authy data file to QR codes scannable by other apps",
+  "main": "qr.js",
+  "bin": {
+      "authy-qr-convert": "./qr.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aredridel/authy-qr-convert.git"
+  },
+  "author": "Aria Stewart <aredridel@nbtsc.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aredridel/authy-qr-convert/issues"
+  },
+  "homepage": "https://github.com/aredridel/authy-qr-convert",
+  "dependencies": {
+    "qrcode-console": "^0.1.0"
+  }
+}
