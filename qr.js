@@ -5,7 +5,9 @@ if (!process.argv[2]) {
     process.exit(1);
 } else {
 
-    var data = require(process.argv[2]);
+    var path = require('path');
+
+    var data = require(path.resolve(process.argv[2]));
 
     var qr = require('qrcode-console');
 
