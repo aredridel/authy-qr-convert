@@ -1,6 +1,6 @@
 {
   "name": "authy-qr-convert",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Convert the json blob from an authy data file to QR codes scannable by other apps",
   "main": "qr.js",
   "bin": {
